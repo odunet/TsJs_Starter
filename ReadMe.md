@@ -1,5 +1,5 @@
 # TensorflowJS Image Detection | NodeJS & Coco SSD
-A simple TS image detection project.
+A simple TS image recognition project.
 
 ## Dependencies
 ```
