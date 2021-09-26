@@ -3,9 +3,8 @@ import '@tensorflow/tfjs-backend-webgl'
 import 'regenerator-runtime/runtime.js'
 import * as cocoSsd from '@tensorflow-models/coco-ssd';
 
+// Convert image from file system to JavaScript object
 import * as images from '../images'
-
-// convert image import for useful image object, ie.e using new Image()
 const parseImageImport = (images) => {
     // Use local image, 
     let imageObject = {}
@@ -20,10 +19,8 @@ const parseImageImport = (images) => {
     return imageObject
 }
 
-
 // Detect contour, and draw box around same
-const runCoco = (img, context, predictions) => {
-    console.log(predictions);
+const detectContour = (img, context, predictions) => {
     predictions.forEach((prediction) => {
       context.font = "20px Arial";
       context.beginPath()
@@ -43,7 +40,7 @@ const runCoco = (img, context, predictions) => {
 const drawImage = (predictions, image, index, canvas) => {
   const context = canvas.getContext('2d')
   context.drawImage(image,0,0)
-  canvas.addEventListener('click',() => runCoco(image, context, predictions))
+  canvas.addEventListener('click',() => detectContour(image, context, predictions))
 }
 
 (async () => {
