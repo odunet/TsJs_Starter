@@ -1,4 +1,4 @@
-# TensorflowJS Image Detection | NodeJS & Coco SSD
+# TensorflowJS Image Recognition | NodeJS & Coco SSD
 A simple TS image recognition project.
 
 ## Dependencies
